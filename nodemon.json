@@ -1,0 +1,14 @@
+{
+  "restartable": "rs",
+  "execMap": {
+    "js": "node"
+  },
+  "watch": [],
+  "ignore": ["src/**/*.spec.js", "src/**/*.test.js", "dist/**/*"],
+  "env": {
+    "DOMAIN": "localhost",
+    "PORT": "3000"
+  },
+  "ext": ".js .json .ts .html .vue ",
+  "exec": "webpack && node app.js"
+}
