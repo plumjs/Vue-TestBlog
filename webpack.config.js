@@ -1,5 +1,4 @@
 var path = require('path');
-var webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
@@ -49,10 +48,11 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
+
                 use: [
                     'vue-style-loader',
                     'css-loader',
-                    'sass-loader'
+                    'sass-loader',
                 ],
             },
             {
@@ -67,6 +67,7 @@ module.exports = {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
                 options: {
+                    esModule: false,
                     name: '[name].[ext]?[hash]'
                 }
             },
@@ -74,8 +75,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '@components': path.resolve('./components'),
+            '@components': path.resolve('./src/components'),
             '@src': path.resolve('./src'),
+            '@imgs': path.resolve('./images'),
         }
     },
     plugins: [
